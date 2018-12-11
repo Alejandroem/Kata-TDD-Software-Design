@@ -22,4 +22,17 @@ public class CalculatorTest {
         // the assert of the values
         Assert.assertEquals(actual, expected);
     }
+
+    @Test 
+    public void addNumbersInString__withTwoNumbers__returnsSum(){
+        final int expected = 2;
+
+        Calculator sut = new Calculator();
+
+        String params = "1,1";
+
+        final int actual = sut.addNumbersInString(params);
+
+        Assert.assertEquals(actual, expected);
+    }
 }
