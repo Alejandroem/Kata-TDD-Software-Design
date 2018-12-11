@@ -13,8 +13,11 @@ public class CalculatorTest {
         // the object to test
         Calculator sut = new Calculator();
 
+        // params for the function
+        String params = "";
+
         // the operation to be tested
-        final int actual = sut.addNumbersInString();
+        final int actual = sut.addNumbersInString(params);
 
         // the assert of the values
         Assert.assertEquals(actual, expected);
