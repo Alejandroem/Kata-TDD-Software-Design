@@ -35,4 +35,17 @@ public class CalculatorTest {
 
         Assert.assertEquals(actual, expected);
     }
+
+    @Test
+    public void addNumbersInString__withOneNumber__retrunSameValue(){
+        final int expected = 1;
+
+        Calculator sut = new Calculator();
+
+        String params = "1";
+
+        final int actual = sut.addNumbersInString(params);
+
+        Assert.assertEquals(actual,expected);
+    }
 }
