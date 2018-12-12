@@ -3,7 +3,7 @@ package com.alejandro.kata;
 public class Calculator {
 
 	public int addNumbersInString(String numbers) {
-        String regexDelimiter = ",";
+        String regexDelimiter = "[,\n]";
         if(numbers.length() == 0){
             return 0;
         }
