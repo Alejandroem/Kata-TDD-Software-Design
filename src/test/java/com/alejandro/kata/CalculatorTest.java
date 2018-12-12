@@ -1,6 +1,7 @@
 package com.alejandro.kata;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CalculatorTest {
@@ -23,42 +24,19 @@ public class CalculatorTest {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test 
-    public void addNumbersInString__withTwoNumbers__returnsSum(){
-        final int expected = 2;
+    @DataProvider
+    public static Object[][] values(){
+        return new Object[][] {
+            {"1", 1 },
+            {"1,1", 2},
+            {"1,1,2",4}
+        };
+    }
 
+    @Test (dataProvider = "values")
+    public void addNumbersInString__withMultipleNumbers__returnsSum(String params, int expected){
         Calculator sut = new Calculator();
-
-        String params = "1,1";
-
         final int actual = sut.addNumbersInString(params);
-
         Assert.assertEquals(actual, expected);
-    }
-
-    @Test
-    public void addNumbersInString__withOneNumber__retrunSameValue(){
-        final int expected = 1;
-
-        Calculator sut = new Calculator();
-
-        String params = "1";
-
-        final int actual = sut.addNumbersInString(params);
-
-        Assert.assertEquals(actual,expected);
-    }
-
-    @Test
-    public void addNumbersInString__withMultipleNumbers__returnSumatoryOfValues(){
-        final int expected = 4;
-
-        String params = "1,1,2";
-
-        Calculator sut = new Calculator();
-
-        final int actual = sut.addNumbersInString(params);
-
-        Assert.assertEquals(actual,expected);
     }
 }
