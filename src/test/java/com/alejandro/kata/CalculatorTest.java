@@ -48,4 +48,17 @@ public class CalculatorTest {
 
         Assert.assertEquals(actual,expected);
     }
+
+    @Test
+    public void addNumbersInString__withMultipleNumbers__returnSumatoryOfValues(){
+        final int expected = 4;
+
+        String params = "1,1,2";
+
+        Calculator sut = new Calculator();
+
+        final int actual = sut.addNumbersInString(params);
+
+        Assert.assertEquals(actual,expected);
+    }
 }
