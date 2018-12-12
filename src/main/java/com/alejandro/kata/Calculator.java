@@ -7,8 +7,13 @@ public class Calculator {
         if(numbers.length() == 0){
             return 0;
         }
-        String[] splittedNumbers = numbers.split(regexDelimiter);		
-        return Integer.parseInt(splittedNumbers[0]) + Integer.parseInt(splittedNumbers[1]);
+        String[] splittedNumbers = numbers.split(regexDelimiter);
+
+        Integer sum = 0;
+        for(int i=0; i < splittedNumbers.length; i++){
+            sum += Integer.parseInt(splittedNumbers[i]);
+        }
+        return  sum;
 	}
-    
+
 }
